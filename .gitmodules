@@ -13,3 +13,6 @@
 [submodule "third_party/kizunapi"]
 	path = third_party/kizunapi
 	url = https://github.com/zcbenz/kizunapi
+[submodule "third_party/imgui"]
+	path = third_party/imgui
+	url = https://github.com/lan-shichao/gn-imgui.git

@@ -12,3 +12,4 @@ use_chromium_config = true
 # GN build files are placed when they can not be placed directly
 # in the source tree, e.g. for third party source trees.
 secondary_source = "//third_party/lua-gn-configs/"
+chromium_config_dir = "D:/chromium-base/third_party/build-gn"

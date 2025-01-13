@@ -2,6 +2,7 @@
 
 #include "base/command_line.h"
 #include "nativeui/nativeui.h"
+#include "base/strings/stringprintf.h"
 
 #if defined(OS_WIN)
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
@@ -19,7 +20,12 @@ int main(int argc, const char *argv[]) {
 
   // Create window with default options, and then show it.
   scoped_refptr<nu::Window> window(new nu::Window(nu::Window::Options()));
-  window->SetContentView(new nu::Label("Hello world"));
+  auto button = new nu::Button("Hello world");
+  int a = 0;
+  button->on_click.Connect([&](nu::Button* button) {
+      button->SetTitle(base::StringPrintf("Hello world %d",++a));
+      });
+  window->SetContentView(button);
   window->SetContentSize(nu::SizeF(400, 400));
   window->Center();
   window->Activate();

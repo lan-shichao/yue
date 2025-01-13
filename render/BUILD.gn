@@ -1,0 +1,15 @@
+# This file is published under public domain.
+
+executable("render") {
+  sources = [ "main.cc" ]
+
+  deps = [
+    "//base",
+    "//third_party/imgui",
+  ]
+
+  if (is_win) {
+    configs -= [ "//build/config/win:console" ]
+    configs += [ "//build/config/win:windowed" ]
+  }
+}

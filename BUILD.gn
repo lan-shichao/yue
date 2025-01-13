@@ -7,9 +7,13 @@ group("default") {
     "//lua_yue",
     "//napi_yue",
     "//sample_app",
+    "//render",
   ]
 
   if (is_win && target_cpu == "arm") {
     deps -= ["//napi_yue"]
   }
+  deps += [
+    "//third_party/imgui",
+  ]
 }
